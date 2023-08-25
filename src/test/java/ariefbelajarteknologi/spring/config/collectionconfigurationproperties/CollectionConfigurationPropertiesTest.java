@@ -24,6 +24,19 @@ public class CollectionConfigurationPropertiesTest {
         Assertions.assertEquals(100,properties.getDatabase().getMaxTablesSize().get("categories"));
     }
 
+    @Test
+    void testEmbeddedCollection() {
+        Assertions.assertEquals("default",properties.getDefaultRoles().get(0).getId());
+        Assertions.assertEquals("Default Role",properties.getDefaultRoles().get(0).getName());
+        Assertions.assertEquals("guest",properties.getDefaultRoles().get(1).getId());
+        Assertions.assertEquals("Guest Role",properties.getDefaultRoles().get(1).getName());
+
+        Assertions.assertEquals("admin",properties.getRoles().get("admin").getId());
+        Assertions.assertEquals("Admin Role",properties.getRoles().get("admin").getName());
+        Assertions.assertEquals("finance",properties.getRoles().get("finance").getId());
+        Assertions.assertEquals("Finance Role",properties.getRoles().get("finance").getName());
+    }
+
     @SpringBootApplication
     @EnableConfigurationProperties({
             ApplicationProperties.class
