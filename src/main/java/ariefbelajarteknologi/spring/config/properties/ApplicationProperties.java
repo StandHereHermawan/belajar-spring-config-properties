@@ -40,6 +40,9 @@ public class ApplicationProperties {
 
         private Map<String,Integer> maxTablesSize;
 
+        private List<Role> defaultRoles;
+
+        private Map<String,Role> roles;
     }
 
     @Getter
