@@ -20,6 +20,10 @@ public class ApplicationProperties {
 
     private DatabaseProperties database;
 
+    private List<Role> defaultRoles;
+
+    private Map<String,Role> roles;
+
     @Getter
     @Setter
     public static class DatabaseProperties{
@@ -37,4 +41,14 @@ public class ApplicationProperties {
         private Map<String,Integer> maxTablesSize;
 
     }
+
+    @Getter
+    @Setter
+    public static class Role{
+
+        private String id;
+
+        private String name;
+    }
+
 }
