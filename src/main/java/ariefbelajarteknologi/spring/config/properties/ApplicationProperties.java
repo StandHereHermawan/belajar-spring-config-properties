@@ -36,5 +36,18 @@ public class ApplicationProperties {
 
         private Map<String,Integer> maxTablesSize;
 
+        private List<Role> defaultRoles;
+
+        private Map<String,Role> roles;
     }
+
+    @Getter
+    @Setter
+    public static class Role{
+
+        private String id;
+
+        private String name;
+    }
+
 }
