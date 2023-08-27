@@ -23,6 +23,18 @@ public class ConverterTest {
     @Autowired
     private ApplicationProperties properties;
 
+    @Autowired
+    private ConversionService conversionService;
+
+    @Test
+    void testConversionService() {
+        Assertions.assertTrue(conversionService.canConvert(String.class, Duration.class));
+        Assertions.assertTrue(conversionService.canConvert(String.class, Date.class));
+
+        Duration result = conversionService.convert("10s", Duration.class);
+        Assertions.assertEquals(Duration.ofSeconds(10), result);
+    }
+
     @Test
     void testDuration() { // String to Duration converter
         Assertions.assertEquals(Duration.ofSeconds(10), properties.getDefaultTimeout());
