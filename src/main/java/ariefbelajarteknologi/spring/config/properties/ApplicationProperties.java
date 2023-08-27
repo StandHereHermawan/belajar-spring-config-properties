@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,8 @@ import java.util.Map;
 @Setter
 @ConfigurationProperties("application")
 public class ApplicationProperties {
+
+    private Duration defaultTimeout;
 
     private String name;
 
